@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="data:," />
+    <title>The I Am Sayings of Jesus</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Lora:ital,wght@0,400;0,500;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #faf3e1;
+        --bg-deep: #f3e8cf;
+        --card: #fffaf0;
+        --ink: #3a2c1e;
+        --ink-soft: #5d4c38;
+        --accent: #8a4b2a;
+        --gold: #a97b2f;
+        --rule: #d9c69a;
+        --quote-bg: #fdf6e3;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #1e1710;
+          --bg-deep: #171209;
+          --card: #261d13;
+          --ink: #efe3cb;
+          --ink-soft: #c9b894;
+          --accent: #d99a68;
+          --gold: #cfa452;
+          --rule: #4d3d27;
+          --quote-bg: #2a2013;
+        }
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        background:
+          radial-gradient(1200px 500px at 50% -80px, var(--bg-deep), transparent 70%),
+          var(--bg);
+        color: var(--ink);
+        font-family: "Lora", Georgia, "Times New Roman", serif;
+        font-size: 1.075rem;
+        line-height: 1.75;
+        -webkit-font-smoothing: antialiased;
+      }
+      .wrap {
+        max-width: 42rem;
+        margin: 0 auto;
+        padding: 3rem 1.35rem 2rem;
+      }
+      header.hero { text-align: center; margin-bottom: 2.75rem; }
+      .hero .ornament {
+        color: var(--gold);
+        font-size: 1.5rem;
+        letter-spacing: 0.6em;
+        text-indent: 0.6em;
+        margin-bottom: 1rem;
+      }
+      h1 {
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-weight: 600;
+        font-size: clamp(2.4rem, 8vw, 3.6rem);
+        line-height: 1.08;
+        margin: 0 0 0.6rem;
+        letter-spacing: 0.01em;
+      }
+      .hero .sub {
+        font-style: italic;
+        color: var(--ink-soft);
+        font-size: 1.12rem;
+        margin: 0 auto;
+        max-width: 30rem;
+      }
+      .opening-quote {
+        margin: 2.25rem auto 0;
+        padding: 1.6rem 1.4rem 1.35rem;
+        background: var(--quote-bg);
+        border: 1px solid var(--rule);
+        border-radius: 4px;
+        text-align: center;
+      }
+      .opening-quote p {
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: clamp(1.45rem, 5.4vw, 1.8rem);
+        font-weight: 600;
+        line-height: 1.35;
+        margin: 0 0 0.55rem;
+      }
+      .ref {
+        font-size: 0.82rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--accent);
+        font-family: "Lora", Georgia, serif;
+      }
+      .intro { margin: 2.25rem 0 0.5rem; }
+      .intro p { margin: 0 0 1.1rem; }
+      .intro p:last-child { margin-bottom: 0; }
+
+      nav.sayings {
+        margin: 2.5rem 0 0.5rem;
+        padding: 1.35rem 1.5rem;
+        background: var(--card);
+        border: 1px solid var(--rule);
+        border-radius: 4px;
+      }
+      nav.sayings h2 {
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin: 0 0 0.7rem;
+        text-align: center;
+        letter-spacing: 0.02em;
+      }
+      nav.sayings ol {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        columns: 2;
+        column-gap: 2rem;
+      }
+      nav.sayings li { margin: 0.3rem 0; break-inside: avoid; }
+      nav.sayings a {
+        color: var(--ink);
+        text-decoration: none;
+        font-size: 0.98rem;
+      }
+      nav.sayings a:hover, nav.sayings a:focus-visible { color: var(--accent); text-decoration: underline; }
+      nav.sayings .n { color: var(--gold); font-weight: 500; margin-right: 0.45rem; }
+      @media (max-width: 30rem) { nav.sayings ol { columns: 1; } }
+
+      section.saying { margin: 3.25rem 0 0; scroll-margin-top: 1.5rem; }
+      .sec-head { display: flex; align-items: baseline; gap: 1rem; margin-bottom: 0.4rem; }
+      .sec-num {
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: 2.6rem;
+        font-weight: 500;
+        color: var(--gold);
+        line-height: 1;
+      }
+      h2.saying-title {
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: clamp(1.7rem, 6vw, 2.15rem);
+        font-weight: 600;
+        margin: 0;
+        line-height: 1.15;
+      }
+      blockquote {
+        margin: 1.1rem 0 0;
+        padding: 1.5rem 1.4rem 1.25rem;
+        background: var(--quote-bg);
+        border: 1px solid var(--rule);
+        border-radius: 4px;
+      }
+      blockquote p {
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: clamp(1.35rem, 5vw, 1.6rem);
+        font-weight: 500;
+        line-height: 1.45;
+        margin: 0 0 0.6rem;
+      }
+      blockquote p:last-of-type { margin-bottom: 0.6rem; }
+      blockquote footer { text-align: right; }
+      .comfort { margin: 1.15rem 0.2rem 0; color: var(--ink); }
+      .divider {
+        text-align: center;
+        color: var(--gold);
+        letter-spacing: 0.5em;
+        text-indent: 0.5em;
+        margin: 3.25rem 0 0;
+        font-size: 0.95rem;
+      }
+      .closing { margin-top: 1.75rem; }
+      .closing h2 {
+        font-family: "Cormorant Garamond", Georgia, serif;
+        font-size: 1.8rem;
+        font-weight: 600;
+        text-align: center;
+        margin: 0 0 1rem;
+      }
+      footer.page {
+        margin-top: 3.5rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--rule);
+        text-align: center;
+        color: var(--ink-soft);
+        font-size: 0.92rem;
+      }
+      footer.page p { margin: 0.3rem 0; }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="hero">
+        <div class="ornament" aria-hidden="true">✦ ✦ ✦</div>
+        <h1>The I Am Sayings of Jesus</h1>
+        <p class="sub">Seven times in John&rsquo;s Gospel, Jesus tells us who He is &mdash; and every time, it is for us.</p>
+
+        <div class="opening-quote">
+          <p>&ldquo;Most certainly, I tell you, before Abraham came into existence, I AM.&rdquo;</p>
+          <span class="ref">John 8:58</span>
+        </div>
+      </header>
+
+      <div class="intro">
+        <p>When God met Moses at the burning bush and Moses asked His name, God answered: <em>I AM</em>. It is the name of the One who simply <em>is</em> &mdash; eternal, unchanging, needing nothing.</p>
+        <p>Centuries later, Jesus of Nazareth took that same name onto His own lips. And He did not leave it bare. Again and again He filled it with pictures drawn from ordinary life &mdash; bread, light, a door, a shepherd, a vine &mdash; so that we would know not only that He is God, but what He is <em>for us</em>.</p>
+        <p>Here are the seven sayings, in His own words.</p>
+      </div>
+
+      <nav class="sayings" aria-label="The seven sayings">
+        <h2>The Seven Sayings</h2>
+        <ol>
+          <li><a href="#bread"><span class="n">01</span>The Bread of Life</a></li>
+          <li><a href="#light"><span class="n">02</span>The Light of the World</a></li>
+          <li><a href="#door"><span class="n">03</span>The Door</a></li>
+          <li><a href="#shepherd"><span class="n">04</span>The Good Shepherd</a></li>
+          <li><a href="#resurrection"><span class="n">05</span>The Resurrection and the Life</a></li>
+          <li><a href="#way"><span class="n">06</span>The Way, the Truth, and the Life</a></li>
+          <li><a href="#vine"><span class="n">07</span>The True Vine</a></li>
+        </ol>
+      </nav>
+
+      <section class="saying" id="bread">
+        <div class="sec-head">
+          <span class="sec-num">01</span>
+          <h2 class="saying-title">The Bread of Life</h2>
+        </div>
+        <blockquote>
+          <p>&ldquo;I am the bread of life. He who comes to me will not be hungry, and he who believes in me will never be thirsty.&rdquo;</p>
+          <footer><span class="ref">John 6:35</span></footer>
+        </blockquote>
+        <p class="comfort">Underneath all our hungers is one deeper hunger &mdash; for Him. Come to Him, and that deepest ache is fed: not once, but every day, and forever.</p>
+      </section>
+
+      <div class="divider" aria-hidden="true">✦ ✦ ✦</div>
+
+      <section class="saying" id="light">
+        <div class="sec-head">
+          <span class="sec-num">02</span>
+          <h2 class="saying-title">The Light of the World</h2>
+        </div>
+        <blockquote>
+          <p>&ldquo;I am the light of the world. He who follows me will not walk in the darkness, but will have the light of life.&rdquo;</p>
+          <footer><span class="ref">John 8:12</span></footer>
+        </blockquote>
+        <p class="comfort">You do not have to find your own way through the dark. Follow Him, and the road ahead is lit &mdash; not by your own strength, but by the light of life itself.</p>
+      </section>
+
+      <div class="divider" aria-hidden="true">✦ ✦ ✦</div>
+
+      <section class="saying" id="door">
+        <div class="sec-head">
+          <span class="sec-num">03</span>
+          <h2 class="saying-title">The Door</h2>
+        </div>
+        <blockquote>
+          <p>&ldquo;I am the door. If anyone enters in by me, he will be saved, and will go in and go out, and will find pasture.&rdquo;</p>
+          <footer><span class="ref">John 10:9</span></footer>
+        </blockquote>
+        <p class="comfort">There is one door into safety, and it stands open. Whoever enters by Him is home &mdash; saved, free, and led out to pasture.</p>
+      </section>
+
+      <div class="divider" aria-hidden="true">✦ ✦ ✦</div>
+
+      <section class="saying" id="shepherd">
+        <div class="sec-head">
+          <span class="sec-num">04</span>
+          <h2 class="saying-title">The Good Shepherd</h2>
+        </div>
+        <blockquote>
+          <p>&ldquo;I am the good shepherd. The good shepherd lays down his life for the sheep.&rdquo;</p>
+          <footer><span class="ref">John 10:11</span></footer>
+        </blockquote>
+        <p class="comfort">A hired hand looks after himself; this Shepherd looks after His sheep at the cost of His own life. You are not watched over from a distance &mdash; you are laid down for.</p>
+      </section>
+
+      <div class="divider" aria-hidden="true">✦ ✦ ✦</div>
+
+      <section class="saying" id="resurrection">
+        <div class="sec-head">
+          <span class="sec-num">05</span>
+          <h2 class="saying-title">The Resurrection and the Life</h2>
+        </div>
+        <blockquote>
+          <p>&ldquo;I am the resurrection and the life. He who believes in me will still live, even if he dies.&rdquo;</p>
+          <footer><span class="ref">John 11:25</span></footer>
+        </blockquote>
+        <p class="comfort">He did not promise that a resurrection would happen someday &mdash; He said He <em>is</em> the resurrection. For anyone who believes in Him, death is real, but it is not the end.</p>
+      </section>
+
+      <div class="divider" aria-hidden="true">✦ ✦ ✦</div>
+
+      <section class="saying" id="way">
+        <div class="sec-head">
+          <span class="sec-num">06</span>
+          <h2 class="saying-title">The Way, the Truth, and the Life</h2>
+        </div>
+        <blockquote>
+          <p>&ldquo;I am the way, the truth, and the life. No one comes to the Father, except through me.&rdquo;</p>
+          <footer><span class="ref">John 14:6</span></footer>
+        </blockquote>
+        <p class="comfort">When you do not know the way, He does not hand you a map and leave you to it &mdash; He is the way. Trust Him, and you are already on the road home to the Father.</p>
+      </section>
+
+      <div class="divider" aria-hidden="true">✦ ✦ ✦</div>
+
+      <section class="saying" id="vine">
+        <div class="sec-head">
+          <span class="sec-num">07</span>
+          <h2 class="saying-title">The True Vine</h2>
+        </div>
+        <blockquote>
+          <p>&ldquo;I am the true vine, and my Father is the farmer.&rdquo;</p>
+          <p>&ldquo;I am the vine. You are the branches. He who remains in me and I in him bears much fruit, for apart from me you can do nothing.&rdquo;</p>
+          <footer><span class="ref">John 15:1, 5</span></footer>
+        </blockquote>
+        <p class="comfort">Your life does not depend on how tightly you can hold on, but on staying joined to Him. Remain in Him, and His life flows into yours, bearing fruit you could never grow on your own.</p>
+      </section>
+
+      <div class="divider" aria-hidden="true">✦ ✦ ✦</div>
+
+      <div class="closing">
+        <h2>Every Time, For Us</h2>
+        <p>Seven times He says who He is, and every time it is for us: bread for the hungry, light for the lost, a door standing open, a shepherd who lays down his life, resurrection and life itself, the way home to the Father, and a vine that keeps us alive. He is all of it &mdash; because He is I AM.</p>
+      </div>
+
+      <footer class="page">
+        <p>Scripture quotations are from the World English Bible (WEB), which is in the public domain.</p>
+        <p>Made by Noki for Tyler. Public domain &mdash; share freely.</p>
+      </footer>
+    </div>
+  </body>
+</html>
