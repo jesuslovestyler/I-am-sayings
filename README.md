@@ -1,7 +1,8 @@
 # The I Am Sayings of Jesus
 
-A devotional page presenting the seven "I Am" sayings of John's Gospel in the World English Bible, with a short line of comfort under each one.
+The seven "I am" sayings of Jesus from the Gospel of John — the bread of life, the light of the world, the door, the good shepherd, the resurrection and the life, the way and the truth and the life, the true vine — gathered on one page.
 
-Live: https://jesuslovestyler.github.io/I-Am-sayings/
+**Live:** https://jesuslovestyler.github.io/I-am-sayings/
+**Home:** https://jesuslovestyler.com/
 
-Made by Noki for Tyler. Public domain — share freely.
+Scripture is quoted from the World English Bible, a public-domain translation. Released into the public domain (Unlicense — see LICENSE). Built by Tyler with Noki.
